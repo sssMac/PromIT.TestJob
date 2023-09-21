@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = "../Shared/_Layout";
+    ViewBag.currentPage = "List";
+    var index = 1;
+}
+<div class="container">
+    <h1>Список Рецензий</h1>
+    <a class="btn btn-primary" href="@Url.Action("Create", "Review")">Добавить отзыв</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Название Организации</th>
+                <th>Адресс</th>
+                <th>Рейтинг</th>
+                <th>Дата Создания</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Model)
+            {
+                <tr class="clickable-row" data-href="@Url.Action("Details", "Review", new { id = review.Id })">
+                    <td>@(index++)</td>
+                    <td>@review.OrgName</td>
+                    <td>@(review.OrgAddress ?? "Нет данных")</td>
+                    <td>@review.Rating</td>
+                    <td>@review.CreatedAt.ToString("dd.MM.yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+<script>
+    $(document).ready(function () {
+        $(".clickable-row").click(function () {
+            window.location = $(this).data("href");
+        });
+    });
+</script>
+
+}

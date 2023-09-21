@@ -1,0 +1,18 @@
+﻿@model List<CommentViewModel>
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var comment in Model)
+        {
+            <li>
+                <strong>@comment.UserName</strong> @comment.CreatedAt.ToString("dd.MM.yyyy HH:mm:ss"):<br />
+                @comment.Text
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Пока нет комментариев.</p>
+}

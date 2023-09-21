@@ -1,0 +1,12 @@
+﻿@model AddCommentViewModel
+
+@using (Html.BeginForm("Post", "Comment", new { reviewId = Model.ReviewId, userName = User.Identity.Name}, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.TextAreaFor(model => model.Text, new { @class = "form-control", rows = 3 })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Отправить комментарий</button>
+}

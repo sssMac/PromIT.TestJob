@@ -1,0 +1,35 @@
+﻿@model ReviewViewModel
+
+@{
+    ViewBag.Title = "Отзыв";
+}
+
+<h2>@ViewBag.Title #@Model.Id</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Имя пользователя:</dt>
+        <dd>@Model.UserName</dd>
+
+        <dt>Название организации:</dt>
+        <dd>@Model.OrgName</dd>
+
+        <dt>Адресс компании:</dt>
+        <dd>@Model.OrgAddress</dd>
+
+        <dt>Что нравится:</dt>
+        <dd>@Model.WhatLike</dd>
+
+        <dt>Что не нравится:</dt>
+        <dd>@(Model.WhatDislike ?? "Нет данных")</dd>
+
+        <dt>Рейтинг:</dt>
+        <dd>@Model.Rating</dd>
+
+        <dt>Дата создания:</dt>
+        <dd>@Model.CreatedAt.ToString("dd.MM.yyyy")</dd>
+    </dl>
+
+</div>
+@await Html.PartialAsync("_CommentPartial", new AddCommentViewModel{ ReviewId = Model.Id })
+@await Html.PartialAsync("_CommentsPartial", Model.Comments)

@@ -1,0 +1,14 @@
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\bin\Debug\net6.0\PromIT.TestJob.Domain.deps.json
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\bin\Debug\net6.0\PromIT.TestJob.Domain.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\bin\Debug\net6.0\PromIT.TestJob.Domain.pdb
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\PromIT.TestJob.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\PromIT.TestJob.Domain.AssemblyInfoInputs.cache
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\PromIT.TestJob.Domain.AssemblyInfo.cs
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\PromIT.TestJob.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\PromIT.TestJob.Domain.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\refint\PromIT.TestJob.Domain.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\PromIT.TestJob.Domain.pdb
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\ref\PromIT.TestJob.Domain.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\bin\Debug\net6.0\PromIT.TestJob.Domain.runtimeconfig.json
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\PromIT.TestJob.Domain.genruntimeconfig.cache
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Domain\obj\Debug\net6.0\PromIT.TestJob.Domain.csproj.AssemblyReference.cache

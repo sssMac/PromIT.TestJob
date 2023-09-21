@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PromIT.TestJob.Application\PromIT.TestJob.Application.csproj" />
+    <ProjectReference Include="..\PromIT.TestJob.Infrastructure\PromIT.TestJob.Infrastructure.csproj" />
+    <ProjectReference Include="..\PromIT.TestJob.Persistence\PromIT.TestJob.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

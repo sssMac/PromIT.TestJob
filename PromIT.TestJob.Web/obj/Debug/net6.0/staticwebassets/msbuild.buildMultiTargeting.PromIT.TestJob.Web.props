@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PromIT.TestJob.Web.props" />
+</Project>

@@ -1,0 +1,44 @@
+﻿@model AddReviewViewModel
+
+@{
+    ViewBag.Title = "Написать отзыв";
+}
+
+<h2>Написать отзыв</h2>
+
+@using (Html.BeginForm("Create", "Review", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserName)
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.OrgName)
+        @Html.TextBoxFor(model => model.OrgName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.OrgAddress)
+        @Html.TextBoxFor(model => model.OrgAddress, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.WhatLike)
+        @Html.TextAreaFor(model => model.WhatLike, new { @class = "form-control", rows = 3 })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.WhatDislike)
+        @Html.TextAreaFor(model => model.WhatDislike, new { @class = "form-control", rows = 3 })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Rating)
+        @Html.DropDownListFor(model => model.Rating, new SelectList(new List<int> { 1, 2, 3, 4, 5 }), "Выберите рейтинг", new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Отправить</button>
+}

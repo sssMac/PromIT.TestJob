@@ -1,0 +1,17 @@
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\bin\Debug\net6.0\PromIT.TestJob.Persistence.deps.json
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\bin\Debug\net6.0\PromIT.TestJob.Persistence.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\bin\Debug\net6.0\PromIT.TestJob.Persistence.pdb
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\PromIT.TestJob.Persistence.csproj.AssemblyReference.cache
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\PromIT.TestJob.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\PromIT.TestJob.Persistence.AssemblyInfoInputs.cache
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\PromIT.TestJob.Persistence.AssemblyInfo.cs
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\PromIT.TestJob.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\PromIT.TestJob.Persistence.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\refint\PromIT.TestJob.Persistence.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\PromIT.TestJob.Persistence.pdb
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\ref\PromIT.TestJob.Persistence.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\bin\Debug\net6.0\PromIT.TestJob.Application.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\bin\Debug\net6.0\PromIT.TestJob.Domain.dll
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\bin\Debug\net6.0\PromIT.TestJob.Application.pdb
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\bin\Debug\net6.0\PromIT.TestJob.Domain.pdb
+C:\Users\ilya-\OneDrive\Desktop\PromIT.TestJob\PromIT.TestJob.Persistence\obj\Debug\net6.0\PromIT.TestJob.Persistence.csproj.CopyComplete
