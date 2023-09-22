@@ -4,32 +4,52 @@
     ViewBag.Title = "Отзыв";
 }
 
-<h2>@ViewBag.Title #@Model.Id</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="media g-mb-30 media-comment">
+                <div class="form-group review-secondary-data">
+                    <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+                    <div class="form-group ">
+                        <h5 class="h5 g-color-gray-dark-v1 mb-0">@Model.UserName</h5>
 
-<div>
-    <dl class="dl-horizontal">
-        <dt>Имя пользователя:</dt>
-        <dd>@Model.UserName</dd>
-
-        <dt>Название организации:</dt>
-        <dd>@Model.OrgName</dd>
-
-        <dt>Адресс компании:</dt>
-        <dd>@Model.OrgAddress</dd>
-
-        <dt>Что нравится:</dt>
-        <dd>@Model.WhatLike</dd>
-
-        <dt>Что не нравится:</dt>
-        <dd>@(Model.WhatDislike ?? "Нет данных")</dd>
-
-        <dt>Рейтинг:</dt>
-        <dd>@Model.Rating</dd>
-
-        <dt>Дата создания:</dt>
-        <dd>@Model.CreatedAt.ToString("dd.MM.yyyy")</dd>
-    </dl>
-
+                        <div class="g-mb-15">
+                            <span class="g-color-gray-dark-v4 g-font-size-12">
+                                @Model.CreatedAt.ToString("dd.MM.yyyy")
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="comment-text">
+                    <div class="secondary">Название организации:</div>
+                    <div class="primary">@Model.OrgName</div>
+                </p>
+                <p class="comment-text">
+                    <div class="secondary">Адресс компании:</div>
+                    <div class="primary">@(Model.OrgAddress ?? "Нет данных")</div>
+                </p>
+                <p class="comment-text">
+                    <div class="secondary">Что нравится:</div>
+                    <div class="primary">@Model.WhatLike</div>
+                </p>
+                <p class="comment-text">
+                    <div class="secondary">Что не нравится:</div>
+                    <div class="primary">@(Model.WhatDislike ?? "Нет данных")</div>
+                </p>
+                <p class="comment-text">
+                    <div class="secondary">Рейтинг:</div>
+                    <div class="rating">
+                        @for (int i = 5; i > 0; i--)
+                        {
+                            if(i > Model.Rating) { <i class="far fa-star"></i> }
+                            else {  <i class="far fa-star gold"></i> }
+                        }
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 @await Html.PartialAsync("_CommentPartial", new AddCommentViewModel{ ReviewId = Model.Id })
 @await Html.PartialAsync("_CommentsPartial", Model.Comments)

@@ -39,7 +39,7 @@ namespace PromIT.TestJob.Web.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
+                    ModelState.AddModelError("", "Неверный логин и (или) пароль");
                 }
             }
             return View(model);
@@ -71,7 +71,6 @@ namespace PromIT.TestJob.Web.Controllers
         // POST: Auth/Logout
         [HttpPost]
         [Authorize]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
             await _authService.Logout();

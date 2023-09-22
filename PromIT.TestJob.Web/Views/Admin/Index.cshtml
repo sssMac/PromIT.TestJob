@@ -1,5 +1,110 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "../Shared/_Layout";
+    ViewBag.currentPage = "List";
+    var index = 1;
+}
+<div class="container">
+    <div class="form-group action-panel">
+        <a class="btn btn-secondary" href="@Url.Action("Create", "Review")" role="button"> <i class="fas fa-plus-square"></i> Отзыв</a>
+        <div class="logout-btn">
+            @using (Html.BeginForm("Logout", "Auth", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-secondary float-end"> <i class="fas fa-sign-out-alt"></i> </button>
+            }
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Название Организации</th>
+                <th>Адресс</th>
+                <th>Рейтинг</th>
+                <th>Дата Создания</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Model)
+            {
+                <tr class="clickable-row" data-href="@Url.Action("Details", "Review", new { id = review.Id })">
+                    <td>@(index++)</td>
+                    <td>@review.OrgName</td>
+                    <td>@(review.OrgAddress ?? "")</td>
+                    <td>@review.Rating</td>
+                    <td>@review.CreatedAt.ToString("dd.MM.yyyy")</td>
+                    <td class="no-clickable">
+                        <a href="javascript:void(0)" id="@review.Id" class="btn btn-danger delete-prompt">Удалить</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Удаление</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="success-message">Вы действительно хотите удалить данный отзыв?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Выйти</button>
+                    <button type="button" class="btn btn-primary delete-confirm">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var removeId;
+            $('.delete-prompt').click(function () {
+                removeId = $(this).attr('id');
+                $('#myModal').modal('show');
+            });
+
+            $('.delete-confirm').click(function () {
+                if (removeId != '') {
+                    $.ajax({
+                        url: '/Admin/RemoveReview',
+                        data: { 'id': removeId },
+                        type: 'post',
+                        success: function (data) {
+                            if (data) {
+                                if ($('.modal-header').hasClass('alert-danger')) {
+                                    $('.modal-header').removeClass('alert-danger').addClass('alert-success');
+                                    $('.delete-confirm').css('display', 'none');
+                                }
+                                $('.success-message').html('Удаление подтвержденно!');
+                                $('.modal-footer').remove();
+                                setTimeout(() => window.location.reload(), 1300);
+                            }
+                        }, error: function (err) {
+                            if (!$('.modal-header').hasClass('alert-danger')) {
+                                $('.modal-header').removeClass('alert-success').addClass('alert-danger');
+                                $('.delete-confirm').css('display', 'none');
+                            }
+                            $('.success-message').html(err.statusText);
+                        }
+                    });
+                }
+            });
+
+            $("#myModal").on("hidden.bs.modal", function () {
+                $(".modal-header").removeClass(' ').addClass('alert-danger');
+                $('.delete-confirm').css('display', 'inline-block');
+                $('.success-message').html('').html('Вы действительно хотите удалить данный отзыв?');
+            });
+
+        });
+    </script>
+
 }

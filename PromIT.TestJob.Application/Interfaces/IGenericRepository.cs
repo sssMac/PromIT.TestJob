@@ -12,7 +12,9 @@ namespace PromIT.TestJob.Application.Interfaces
         Task<IEnumerable<TEntity>> Get(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            string includeProperties = "");
+            string includeProperties = "",
+            int pageNumber = default,
+            int pageSize = default);
 
         Task<TEntity> GetByID(
             Guid id,

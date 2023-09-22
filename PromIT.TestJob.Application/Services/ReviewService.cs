@@ -20,7 +20,16 @@ namespace PromIT.TestJob.Application.Services
             : base(unitOfWork, mapper) { }
 
         public async Task<List<ReviewViewModel>> GetAllReviews()
-            => _mapper.Map<List<ReviewViewModel>>(await _unitOfWork.ReviewRepository.Get());
+        {
+            var list = await _unitOfWork.ReviewRepository.Get(orderBy: x => x.OrderByDescending(x => x.CreatedAt));
+            return _mapper.Map<List<ReviewViewModel>>(list);
+        }
+
+        public async Task<List<ReviewViewModel>> GetLazyReviews(int pageNumber, int pageSize)
+        {
+            var list = await _unitOfWork.ReviewRepository.Get(pageNumber: pageNumber, pageSize: pageSize);
+            return _mapper.Map<List<ReviewViewModel>>(list);
+        }
 
         public async Task<ReviewViewModel> GetReview(Guid id)
             => _mapper.Map<ReviewViewModel>(await _unitOfWork.ReviewRepository.GetByID(id, "Comments"));

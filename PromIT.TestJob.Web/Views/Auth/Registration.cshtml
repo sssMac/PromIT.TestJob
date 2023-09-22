@@ -1,26 +1,42 @@
 ﻿@model RegisterViewModel
-
+@{
+    Layout = "_AuthLayout";
+}
 <h2>Регистрация</h2>
+@foreach (var key in ViewData.ModelState.Keys)
+{
+    foreach (var error in ViewData.ModelState[key].Errors)
+    {
+        <div class="field-validation-error">@error.ErrorMessage</div>
+    }
+}
 <form asp-controller="Auth" asp-action="Registration" method="post">
     <div class="form-group">
         <label asp-for="UserName">Никнейм</label>
         <input asp-for="UserName" class="form-control" />
-        <span asp-validation-for="UserName" class="text-danger"></span>
+        @Html.ValidationMessageFor(model => model.UserName)
+
     </div>
     <div class="form-group">
         <label asp-for="Email">Email</label>
         <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
+        @Html.ValidationMessageFor(model => model.Email)
+
     </div>
     <div class="form-group">
         <label asp-for="Password">Пароль</label>
         <input asp-for="Password" type="password" class="form-control" />
-        <span asp-validation-for="Password" class="text-danger"></span>
+        @Html.ValidationMessageFor(model => model.Password)
+
     </div>
     <div class="form-group">
         <label asp-for="PasswordConfirm">Подтверждение пароля</label>
         <input asp-for="PasswordConfirm" type="password" class="form-control" />
-        <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    <div class="form-group-auth">
+        <a class="to-signup primary" href="@Url.Action("Login", "Auth", HttpMethods.Get)">У меня уже есть аккаунт</a>
+        <button type="submit" class="btn btn-secondary btn-auth">Создать</button>
+    </div>
+    
+
 </form>

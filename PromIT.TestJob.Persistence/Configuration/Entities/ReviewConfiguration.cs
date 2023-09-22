@@ -20,7 +20,7 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "JohnDoe",
                     OrgName = "ABC Inc.",
                     OrgAddress = null,
-                    WhatLike = "Friendly colleagues",
+                    WhatLike = "Est. Id id quis, tortor, ipsum sodales interdum in lacinia nunc integer orci, orci, in mattis non ultricies. Eleifend pe",
                     WhatDislike = "Long commute",
                     Rating = 4,
                     CreatedAt = GenerateRandomDate()
@@ -31,7 +31,7 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "JaneSmith",
                     OrgName = "XYZ Corp.",
                     OrgAddress = "456 Elm St",
-                    WhatLike = "Flexible hours",
+                    WhatLike = "Et mattis dictumst. Et efficitur augue sapien pulvinar amet, et. Augue nulla et odio. Leo, sit hac lectus nunc lectus qu",
                     WhatDislike = null,
                     Rating = 5,
                     CreatedAt = GenerateRandomDate()
@@ -42,7 +42,7 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "BobJohnson",
                     OrgName = "LMN Ltd.",
                     OrgAddress = "789 Oak St",
-                    WhatLike = "Great benefits",
+                    WhatLike = "Urna platea eget mauris sit dictum et non est. Non non ultricies. Urna orci, dictum morbi hac mauris non sit vulputate l",
                     WhatDislike = "No remote work",
                     Rating = 3,
                     CreatedAt = GenerateRandomDate()
@@ -76,7 +76,7 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     OrgName = "UVW Inc.",
                     OrgAddress = "303 Cedar St",
                     WhatLike = "Diverse team",
-                    WhatDislike = "Lack of training",
+                    WhatDislike = "Urna platea eget mauris sit dictum et non est. Non non ultricies. Urna orci, dictum morbi hac mauris non sit vulputate l",
                     Rating = 4,
                     CreatedAt = GenerateRandomDate()
                 },
@@ -86,8 +86,8 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "GraceWang",
                     OrgName = "HIJ Corporation",
                     OrgAddress = "404 Birch St",
-                    WhatLike = "Innovative projects",
-                    WhatDislike = "Micromanagement",
+                    WhatLike = "Tortor, tempus amet dictum non amet cursus vel luctus amet vitae leo, mattis cras integer vulputate ex. Cursus ornare et",
+                    WhatDislike = "Orci, velit platea vulputate sit ultricies. Orci, vitae dapibus dictum habitasse amet, id morbi lorem non integer eget e",
                     Rating = 5,
                     CreatedAt = GenerateRandomDate()
                 },
@@ -97,8 +97,8 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "JohnDoe",
                     OrgName = "ABC Inc.",
                     OrgAddress = null,
-                    WhatLike = "Friendly colleagues",
-                    WhatDislike = "Long commute",
+                    WhatLike = "Accumsan molestie platea luctus vestibulum pulvinar et. Vestibulum sapien morbi dolor ornare sodales elit. Justo imperdi",
+                    WhatDislike = "Lorem molestie ut. Vulputate sapien vitae malesuada amet, efficitur mattis non sodales sed dapibus leo, amet, quam, sed ",
                     Rating = 4,
                     CreatedAt = GenerateRandomDate()
                 },
@@ -108,7 +108,7 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "JaneSmith",
                     OrgName = "XYZ Corp.",
                     OrgAddress = "456 Elm St",
-                    WhatLike = "Flexible hours",
+                    WhatLike = "Vestibulum sapien amet, non cras molestie ex. Sed justo in tempus amet venenatis dictumst. Eget malesuada est. Malesuada",
                     WhatDislike = null,
                     Rating = 5,
                     CreatedAt = GenerateRandomDate()
@@ -119,8 +119,8 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "BobJohnson",
                     OrgName = "LMN Ltd.",
                     OrgAddress = "789 Oak St",
-                    WhatLike = "Great benefits",
-                    WhatDislike = "No remote work",
+                    WhatLike = "Platea eget et interdum in et. Tempus pulvinar sed mattis ipsum venenatis et augue pellentesque faucibus. Eleifend vitae",
+                    WhatDislike = "Dictum amet, libero, faucibus. Eget nisi augue venenatis nunc non sed sit elit. Velit efficitur sodales et justo faucibu",
                     Rating = 3,
                     CreatedAt = GenerateRandomDate()
                 },
@@ -130,7 +130,7 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "AliceJohnson",
                     OrgName = "PQR Co.",
                     OrgAddress = null,
-                    WhatLike = "Work-life balance",
+                    WhatLike = "Nisi non odio. Integer quam, amet, pellentesque vulputate ipsum velit vestibulum mattis mauris urna risus dolor augue le",
                     WhatDislike = null,
                     Rating = 4,
                     CreatedAt = GenerateRandomDate()
@@ -152,8 +152,8 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "DavidLee",
                     OrgName = "UVW Inc.",
                     OrgAddress = "303 Cedar St",
-                    WhatLike = "Diverse team",
-                    WhatDislike = "Lack of training",
+                    WhatLike = "Non molestie amet, sodales vulputate pellentesque mauris lectus vestibulum lacinia amet, mauris cursus nulla ultricies. ",
+                    WhatDislike = "Dictum. Aenean ultricies. Mauris sit sodales amet, nulla nisi in vitae vulputate pellentesque dictumst. Est. Pellentesqu",
                     Rating = 4,
                     CreatedAt = GenerateRandomDate()
                 },
@@ -163,8 +163,8 @@ namespace PromIT.TestJob.Persistence.Configuration.Entities
                     UserName = "GraceWang",
                     OrgName = "HIJ Corporation",
                     OrgAddress = null,
-                    WhatLike = "Innovative projects",
-                    WhatDislike = "Micromanagement",
+                    WhatLike = "Ignorant saw her her drawings marriage laughter. Case oh an that or away sigh do here upon. Acuteness you exquisite ourselves now end forfeited. Enquire ye without it garrets up himself. Interest our nor received followed was. Cultivated an up solicitude mr unpleasant. ",
+                    WhatDislike = "Forth days said a greater given years fly wherein for fish Fourth sea land stars. Every. Gathering together fruit. Moving male after image form said in fifth very from you'll one. Forth. You'll she'd i set it saw Make waters.",
                     Rating = 5,
                     CreatedAt = GenerateRandomDate()
                 }

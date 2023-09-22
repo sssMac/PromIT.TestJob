@@ -19,8 +19,15 @@ namespace PromIT.TestJob.Web.Controllers
         // GET: Review
         [HttpGet]
         public async Task<IActionResult> Index()
-            => View(await _reviewService.GetAllReviews());
+            => View();
 
+        // GET: Review/GetReviews
+        [HttpGet]
+        public async Task<IActionResult> GetReviews(int pageNumber, int pageSize)
+        {
+            var list = await _reviewService.GetLazyReviews(pageNumber, pageSize);
+            return Json(list);
+        }
         // GET: Review/Details/[id]
         [HttpGet]
         public async Task<IActionResult> Details(Guid id)
@@ -30,28 +37,27 @@ namespace PromIT.TestJob.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            return View();
+            return View(new AddReviewViewModel { UserName = User.Identity.Name });
         }
 
         // POST: Review/Create
         [HttpPost]
         public async Task<IActionResult> Create(AddReviewViewModel viewModel)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return BadRequest("Не верный формат данных");
+                var result = await _reviewService.AddReview(viewModel);
+                if (result.Success)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", result.Error);
+                }
             }
+            return View(viewModel);
 
-            var result = await _reviewService.AddReview(viewModel);
-
-            if (result.Success)
-            {
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return BadRequest(result.Error);
-            }
         }
 
     }

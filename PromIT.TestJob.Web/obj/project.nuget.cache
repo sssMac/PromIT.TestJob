@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oV0JysaTfnpbYtI8TK/S+uxzg5HncCcLIKj5Rdz/s8/4LS/LH9r7k3iUgdo+OHDzvdGKKkL+FtaNiE10OH/IVg==",
+  "dgSpecHash": "Ga83j5Py0cuF3agMZ91ZlO3l5XnBFCiuLMdpCzyci2l6ShZiSKSusP2tlEq+9j8P+JwxfRE8b35kj0tBG7J+mA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ilya-\\OneDrive\\Desktop\\PromIT.TestJob\\PromIT.TestJob.Web\\PromIT.TestJob.Web.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\ilya-\\.nuget\\packages\\extensions.configuration\\0.0.4\\extensions.configuration.0.0.4.nupkg.sha512",
     "C:\\Users\\ilya-\\.nuget\\packages\\extensions.configuration.resolver\\0.0.4\\extensions.configuration.resolver.0.0.4.nupkg.sha512",
     "C:\\Users\\ilya-\\.nuget\\packages\\extensions.configuration.sources.objects\\0.0.2\\extensions.configuration.sources.objects.0.0.2.nupkg.sha512",
+    "C:\\Users\\ilya-\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\ilya-\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ilya-\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.1.1\\microsoft.aspnetcore.authentication.2.1.1.nupkg.sha512",
     "C:\\Users\\ilya-\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.1\\microsoft.aspnetcore.authentication.abstractions.2.1.1.nupkg.sha512",

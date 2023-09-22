@@ -19,7 +19,9 @@ namespace PromIT.TestJob.Persistence.Repositories
         public virtual async Task<IEnumerable<TEntity>> Get(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            string includeProperties = "")
+            string includeProperties = "",
+            int pageNumber = default,
+            int pageSize = default)
         {
             IQueryable<TEntity> query = dbSet;
 
@@ -32,7 +34,13 @@ namespace PromIT.TestJob.Persistence.Repositories
             {
                 query = query.Include(includeProperty);
             }
-
+            if(pageNumber != default && pageSize != default)
+            {
+                return await query.OrderByDescending(x => x.CreatedAt)
+                    .Skip((pageNumber - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+            }
 
             if (orderBy != null)
             {
@@ -43,6 +51,7 @@ namespace PromIT.TestJob.Persistence.Repositories
                 return await query.ToListAsync();
             }
         }
+
 
         public virtual async Task<TEntity> GetByID(
             Guid id,

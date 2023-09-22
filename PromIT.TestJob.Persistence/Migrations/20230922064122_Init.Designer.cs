@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PromIT.TestJob.Persistence;
@@ -11,9 +12,11 @@ using PromIT.TestJob.Persistence;
 namespace PromIT.TestJob.Persistence.Migrations
 {
     [DbContext(typeof(ReviewsDbContext))]
-    partial class ReviewsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230922064122_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

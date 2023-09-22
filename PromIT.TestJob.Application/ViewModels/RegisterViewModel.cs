@@ -11,11 +11,13 @@ namespace PromIT.TestJob.Application.ViewModels
     {
         [Required]
         [Display(Name = "Никнейм")]
+        [StringLength(50)]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
+        [StringLength(50)]
         public string Password { get; set; }
 
         [Required]
@@ -26,6 +28,7 @@ namespace PromIT.TestJob.Application.ViewModels
 
         [Required]
         [Display(Name = "Email")]
+        [StringLength(50)]
         public string Email { get; set; }
     }
 }

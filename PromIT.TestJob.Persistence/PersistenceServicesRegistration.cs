@@ -20,6 +20,10 @@ namespace PromIT.TestJob.Persistence
             services.AddIdentity<IdentityUser, IdentityRole>(
                options =>
                {
+                   options.User.AllowedUserNameCharacters = "qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPASDFGHJKLMNBVCXZйцукенгшщзхъэждлорпавыфячсмитьбюЙЦУКЕНГШЩЗХЪЭЖДЛОРПАВЫФЯЧСМИТЬБЮ";
+                   options.Password.RequireDigit = false;
+                   options.Password.RequireNonAlphanumeric = false;
+                   options.Password.RequiredLength = 3;
                    options.User.RequireUniqueEmail = true;
                    options.Password.RequireNonAlphanumeric = false;
                    options.Password.RequireUppercase = false;

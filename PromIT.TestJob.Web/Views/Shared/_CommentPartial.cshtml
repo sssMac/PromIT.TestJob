@@ -1,12 +1,29 @@
 ﻿@model AddCommentViewModel
 
-@using (Html.BeginForm("Post", "Comment", new { reviewId = Model.ReviewId, userName = User.Identity.Name}, FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.TextAreaFor(model => model.Text, new { @class = "form-control", rows = 3 })
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="media g-mb-30 media-comment">
+                <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                    @using (Html.BeginForm("Post", "Comment", new { reviewId = Model.ReviewId, userName = User.Identity.Name }, FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="panel">
+                            <div class="panel-body">
+                                @Html.TextAreaFor(model => model.Text, new { @class = "form-control", rows = 2 , placeholder = "Что вы об этом думаете?"})
+                                @Html.ValidationMessageFor(model => model.Text)
+
+                                <div class="mar-top clearfix">
+                                    <button class="btn btn-sm btn-secondary float-end" type="submit">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            
+            </div>
+        </div>
     </div>
-
-    <button type="submit" class="btn btn-primary">Отправить комментарий</button>
-}
+</div>

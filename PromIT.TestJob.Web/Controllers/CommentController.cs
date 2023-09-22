@@ -20,21 +20,16 @@ namespace PromIT.TestJob.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Post(AddCommentViewModel viewModel)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Details", "Review", new { id = viewModel.ReviewId });
-            }
+                var result = await _commentService.AddComment(viewModel);
+                if (!result.Success)
+                {
+                    ModelState.AddModelError("", result.Error);
 
-            var result = await _commentService.AddComment(viewModel);
-
-            if (result.Success)
-            {
-                return RedirectToAction("Details", "Review", new {id = viewModel.ReviewId});
+                }
             }
-            else
-            {
-                return RedirectToAction("Details", "Review", new { id = viewModel.ReviewId }, result.Error);
-            }
+            return RedirectToAction("Details", "Review", new { id = viewModel.ReviewId });
         }
     }
 }

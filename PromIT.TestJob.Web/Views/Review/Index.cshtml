@@ -5,8 +5,16 @@
     var index = 1;
 }
 <div class="container">
-    <h1>Список Рецензий</h1>
-    <a class="btn btn-primary" href="@Url.Action("Create", "Review")">Добавить отзыв</a>
+    <div class="form-group action-panel">
+        <a class="btn btn-secondary" href="@Url.Action("Create", "Review")" role="button"> <i class="fas fa-plus-square"></i> Отзыв</a>
+        <div class="logout-btn">
+            @using (Html.BeginForm("Logout", "Auth", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-secondary float-end"> <i class="fas fa-sign-out-alt"></i> </button>
+            }
+        </div>
+    </div>
 
     <table class="table table-striped">
         <thead>
@@ -15,31 +23,58 @@
                 <th>Название Организации</th>
                 <th>Адресс</th>
                 <th>Рейтинг</th>
-                <th>Дата Создания</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var review in Model)
-            {
-                <tr class="clickable-row" data-href="@Url.Action("Details", "Review", new { id = review.Id })">
-                    <td>@(index++)</td>
-                    <td>@review.OrgName</td>
-                    <td>@(review.OrgAddress ?? "Нет данных")</td>
-                    <td>@review.Rating</td>
-                    <td>@review.CreatedAt.ToString("dd.MM.yyyy")</td>
-                </tr>
-            }
         </tbody>
     </table>
+    <a class="btn btn-secondary" id="more" onclick="loadReviews()" role="button">Больше...</a>
 </div>
 
 @section Scripts {
 <script>
     $(document).ready(function () {
-        $(".clickable-row").click(function () {
-            window.location = $(this).data("href");
-        });
+            loadReviews();
     });
+        var pageNumber = 1;
+        var pageSize = 5;
+
+        var index = 1;
+
+        function loadReviews() {
+            $.ajax({
+                url: '/Review/GetReviews',
+                method: 'GET',
+                data: { pageNumber: pageNumber, pageSize: pageSize },
+                success: function (data) {
+                    if (data.length > 0) {
+                        data.forEach(function (review) {
+                            var row = $('<tr class="clickable-row table-data" data-href="@Url.Action("Details", "Review")/' + review.id + '"></tr>');
+                            row.append('<td>' + (index++) + '</td>');
+                            row.append('<td>' + review.orgName + '</td>');
+                            row.append('<td>' + (review.orgAddress || "") + '</td>');
+
+                            var rating = $('<td><div class="rating"></div></td>')
+                            console.log(rating)
+                            for (let i = 0; i < review.rating; i++) {
+                                rating.append('<i class="far fa-star gold">')
+                            }
+                            row.append(rating);
+
+                            $('tbody').append(row);
+                        });
+                        pageNumber++;
+
+                        $(".clickable-row").click(function () {
+                            window.location = $(this).data("href");
+                        });
+                    }
+                    if (data.length < pageSize) {
+                        $('#more').hide();
+                    }
+                }
+            });
+        }
 </script>
 
 }
