@@ -5,5 +5,5 @@
 - Изменить строку подключения в appsetings.json
 - вызвать Update-Database
 
-Аккаунт админна: 
+Аккаунт админа: 
 - admin@mail.ru : admin
