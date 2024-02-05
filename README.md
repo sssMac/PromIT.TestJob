@@ -6,4 +6,4 @@
 - вызвать Update-Database
 
 Аккаунт админа: 
-- admin@mail.ru : admin
+- admin@admin.ru : admin
